@@ -1,13 +1,13 @@
 # ansible-magento
-# requirements:
--vagrant
+## requirements:
+-vagrant<br>
 -ansible
-# instructions: 
-clone this repo
-vagrant up
+## instructions: 
+clone this repo<br>
+vagrant up<br>
 navigate to magento.dev in your browser.
 
-this was based off https://github.com/jruels/AnsiblePlaybooks/tree/master/ansible-magento-lemp with a few changes to steamline the process of getting up and running
+this was based off the work by [jruels](https://github.com/jruels/AnsiblePlaybooks/tree/master/ansible-magento-lemp) with a few changes to steamline the process of getting up and running
 
-#todo
+## todo
 add the option to include magento sample data
