@@ -14,4 +14,8 @@ password: password123<br>
 this was based off the work by [jruels](https://github.com/jruels/AnsiblePlaybooks/tree/master/ansible-magento-lemp) with a few changes to steamline the process of getting up and running
 
 ## todo
-add the option to include magento sample data
+install magerun as mage
+install xdebug
+add in memcached support
+use percona sql instead of mysql
+create tags for production vs devel servers

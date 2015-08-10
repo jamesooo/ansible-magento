@@ -9,7 +9,7 @@
   group: name=magento
 
 - name: Add user "magento"
-  user: name=magento group=magento home=/srv/magento/
+  user: name=magento group=magento home=/srv/magento/ uid=666666
 
 - name: Change ownership of Magento installation
   file: path=/srv/magento/ owner=magento state=directory recurse=yes

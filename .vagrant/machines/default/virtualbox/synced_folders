@@ -1,1 +1,1 @@
-{"nfs":{"/srv":{"nfs":true,"guestpath":"/srv","hostpath":"/Users/jamesoneal/ansible/public","disabled":false,"type":"nfs","map_uid":501,"map_gid":20,"nfs_udp":true,"nfs_version":3,"uuid":"2938681602"}},"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/jamesoneal/ansible","disabled":false}}}
+{"virtualbox":{"/srv":{"owner":666666,"guestpath":"/srv","hostpath":"/Users/jamesoneal/php/magento/public","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/jamesoneal/php/magento","disabled":false}}}
