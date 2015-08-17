@@ -8,15 +8,19 @@
   with_items:
     - php54w-fpm
     - php54w-enchant
-    - php-IDNA_Convert
+    # - php-IDNA_Convert ## these commented out packages may be required 
     - php54w-mbstring
     - php54w-mysql
-    - php-PHPMailer
+    # - php-PHPMailer
     - php54w-process
-    - php-simplepie
+    # - php-simplepie
     - php54w-xml
     - php54w-mcrypt
     - php54w-gd
+    - php54w-pear
+    - php54w-soap
+    - php54w-intl
+    - php54w-cli
 
 - name: Disable default pool
   command: mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled creates=/etc/php-fpm.d/www.disabled

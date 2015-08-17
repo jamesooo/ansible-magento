@@ -8,20 +8,25 @@
   with_items:
     - php54w-fpm
     - php54w-enchant
-    - php-IDNA_Convert
     - php54w-mbstring
     - php54w-mysql
-    - php-PHPMailer
     - php54w-process
-    - php-simplepie
     - php54w-xml
     - php54w-mcrypt
     - php54w-gd
+    - php54w-pear
+
+- name: install php-simplepie php-PHPMailer php-IDNA_Convert through php54w-pear
+  pear: name={{item}} state=present
+  with_items:
+    - php-IDNA_Convert
+    - php-PHPMailer
+    - php-simplepie
 
 - name: Disable default pool
   command: mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled creates=/etc/php-fpm.d/www.disabled
   notify: restart php-fpm
- 
+
 - name: Copy php-fpm configuration
   template: src=magento.conf dest=/etc/php-fpm.d/
   notify: restart php-fpm

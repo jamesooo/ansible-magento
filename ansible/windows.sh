@@ -26,7 +26,7 @@ fi
 if ! command -v ansible >/dev/null; then
   echo "Installing Ansible dependencies and Git."
   if [[ ! -z ${YUM} ]]; then
-    yum install -y git python python-devel
+    yum install -y git python python-devel python-setuptools gcc
   elif [[ ! -z ${APT_GET} ]]; then
     apt-get install -y git python python-dev
   else
@@ -34,9 +34,9 @@ if ! command -v ansible >/dev/null; then
     exit 1;
   fi
 
-  echo "Installing pip via easy_install."
-  wget https://raw.githubusercontent.com/ActiveState/ez_setup/v0.9/ez_setup.py
-  python ez_setup.py && rm -f ez_setup.py
+  #echo "Installing pip via easy_install."
+  #wget https://raw.githubusercontent.com/ActiveState/ez_setup/v0.9/ez_setup.py
+  #python ez_setup.py && rm -f ez_setup.py
   easy_install pip
   # Make sure setuptools are installed crrectly.
   pip install setuptools --no-use-wheel --upgrade
