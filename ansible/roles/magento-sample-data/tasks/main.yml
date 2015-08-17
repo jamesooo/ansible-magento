@@ -1,0 +1,15 @@
+---
+- name: Download Magento Sample Data
+  get_url: url=http://www.magentocommerce.com/downloads/assets/{{ mag_version }}/magento-sample-data-{{ mag_version }}.tar dest=/srv/magento-sample-data-{{ mag_version }}.tar
+
+- name: Unzip Sample Data
+  command: chdir=/srv/ /bin/tar xf magento-sample-data-{{ mag_version }}.tar creates=/srv/magento-sample-data --no-same-owner
+
+- name: Move Sample Data folders into the server folder
+  file: src=/srv/magento-sample-data-{{ mag_version }}/{{item}}/ dest=/srv/magento/{{item}}/ owner=magento group=magento recurse=yes
+  with_items:
+  - media
+  - skin
+
+- name: Import Sample Data into MySQL
+  mysql_db: state=import name={{ mag_db_name }} target=/srv/magento-sample-data-{{ mag_version }}/magento_sample_data_for_{{ mag_version }}.sql

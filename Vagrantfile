@@ -69,9 +69,17 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
+  require 'rbconfig'
+  is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
+  if is_windows
+    # Provisioning configuration for shell script.
+    config.vm.provision "shell" do |sh|
+      sh.path = "ansible/windows.sh"
+      sh.args = "ansible/site.yml"
+    end
+  else
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "site.yml"
-    ansible.verbose = "vvv"
+    ansible.playbook = "ansible/site.yml"
     #ansible.skip_tags = "permissions"
   end
 end

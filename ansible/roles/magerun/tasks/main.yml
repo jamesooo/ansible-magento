@@ -1,0 +1,3 @@
+---
+- name: install n98-magerun.phar
+  get_url: url=http://files.magerun.net/n98-magerun-latest.phar dest=/usr/local/bin/{{ n98_magerun_name }} mode=0774
