@@ -78,8 +78,9 @@ Vagrant.configure(2) do |config|
       sh.args = "ansible/site.yml"
     end
   else
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "ansible/site.yml"
-    #ansible.skip_tags = "permissions"
+    config.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/site.yml"
+      #ansible.skip_tags = "permissions"
+    end
   end
 end
