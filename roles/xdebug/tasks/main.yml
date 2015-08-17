@@ -1,3 +1,0 @@
----
-- name: install xdebug on the server
-  yum: name=php54w-pecl-xdebug state=present
