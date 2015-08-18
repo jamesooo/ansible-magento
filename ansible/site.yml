@@ -7,9 +7,9 @@
     - common #6
     - mysql #3 swap to percona
     - magento #7
-    # - magento-sample-data #4
+    - magento-sample-data #4
     - nginx #2
     - php-fpm #4
-    # - memcached # production use
+    - memcached # production use
     - magerun
     - xdebug # development use

@@ -7,5 +7,3 @@
 
 - name: add memcached to /etc/rc.d/rc.local to start on boot
   lineinfile: dest=/etc/rc.d/rc.local line="/etc/init.d/memcached start"
-
-- name: add memcached config to Magento 
